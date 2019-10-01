@@ -64,18 +64,25 @@ void main(){
     }
 
     
-     printToScreen();
+    uint32_t BOX_SIZE = 30;
     
+    uint32_t zoom =20;
+    
+    
+    printToScreen(BOX_SIZE);
    
     while(true){
-
+        
         if(changed){
-            //hal_video_clear();
+            
+            
+            
             hal_video_puts( "Excerpt from Alice in Wonderland:\n\r\n\r\n\r" , 2, VIDEO_COLOR_GREEN );
+
 
             hal_video_puts( title , zoom_title, VIDEO_COLOR_WHITE );
             hal_video_puts( alice , zoom_text, VIDEO_COLOR_WHITE );
-
+            
             hal_video_puts( "\n\r\n\r(-) Zoom Out, (+) Zoom In", 2, VIDEO_COLOR_GREEN  );
         }
         switch( hal_io_serial_getc(SerialA) ){
@@ -83,12 +90,18 @@ void main(){
                 hal_io_serial_puts( SerialA, "Zoom In\n\r" );
                 zoom_title++;
                 zoom_text++;
+                zoom=zoom+ 0.4*zoom;
+                
+                zoomIn(BOX_SIZE, zoom);
+                
                 changed=true;
                 break;
             case '-':
                 hal_io_serial_puts( SerialA, "Zoom Out\n\r" );
                 zoom_title--;
                 zoom_text--;
+                zoom=zoom - 0.4*zoom;
+                zoomOut(BOX_SIZE, zoom);
                 changed=true;
                 break;
             default:

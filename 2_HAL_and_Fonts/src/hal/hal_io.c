@@ -30,6 +30,7 @@ uint32_t hal_io_serial_init( void ){
 	return HAL_SUCCESS;
 }
 
+
 /*
 *  HAL IO Serial Puts
 */

@@ -30,9 +30,11 @@ uint32_t hal_video_init( void ){
 *
 */
 void hal_video_puts( uint8_t* string, uint32_t size, VideoColor color ){
+    
+  
+    
+    
 
-    *fb=string[0];
-    put_pixel_raw(8,color);
     //Solution goes here
 
 
@@ -45,7 +47,7 @@ void hal_video_puts( uint8_t* string, uint32_t size, VideoColor color ){
 void hal_video_putc( uint8_t c, uint32_t size, VideoColor color  ){
     //Solution goes here
 
-
+//printToScreen(20);
 }
 
 
@@ -55,6 +57,7 @@ void hal_video_putc( uint8_t c, uint32_t size, VideoColor color  ){
 */
 void hal_video_putc_x_y( uint32_t x, uint32_t y, uint8_t c, uint32_t size, VideoColor color  ){
     //Solution goes here
+   // printToScreen(20);
 }
 
 

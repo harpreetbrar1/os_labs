@@ -8,7 +8,7 @@
 //
 #define SYSTEM_SCREEN_WIDTH      1024
 #define SYSTEM_SCREEN_LENGTH     768
-#define BOX_SIZE                 20
+
 
 
 
